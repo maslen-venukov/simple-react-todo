@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Сделать тудушку",
+      "completed": true
+    },
+    {
+      "text": "Задача",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "text": "Новая задача",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "text": "Lorem",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "text": "Ipsum",
+      "completed": true,
+      "id": 5
+    }
+  ]
+}

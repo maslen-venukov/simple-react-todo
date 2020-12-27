@@ -1,0 +1,207 @@
+@import 'normalize'
+@import 'reset'
+
+$accent: #d49c6b
+$success: #177538
+$danger: #b71a3b
+$grey: #c1c8c7
+$text: #252b31
+$shadow: 0 3px 15px rgba(#000, .15)
+
+html,
+body
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  font-size: 16px
+  line-height: 1.2
+  color: $text
+  background-color: #f6fafb
+
+button:active
+  transform: translateY(1px)
+
+.wrapper
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 0 15px
+
+.todo
+  width: 400px
+  height: 500px
+  box-shadow: $shadow
+  border-radius: 10px
+  overflow: hidden
+
+.header
+  height: 60px
+  display: flex
+  align-items: center
+  font-size: 24px
+  font-weight: 700
+  color: #fff
+  background-color: $accent
+  padding: 0 15px
+
+.body
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: calc(100% - 60px)
+  background-color: #fff
+  padding: 15px
+  overflow-y: auto
+
+.loader
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+
+.list
+  margin-bottom: 20px
+  &__item
+    &:not(:last-child)
+      margin-bottom: 5px
+
+.list-item
+  display: flex
+  justify-content: space-between
+  align-items: center
+  &__checkbox
+    display: none
+    &:checked ~ .list-item__label
+      .list-item__text
+        color: $grey
+        &::after
+          opacity: 1
+      .list-item__mark
+        fill: $accent
+  &__label
+    width: 100%
+    display: flex
+    align-items: center
+    cursor: pointer
+    overflow: hidden
+    margin-right: 30px
+  &__mark
+    flex-shrink: 0
+    width: 14px
+    height: 14px
+    fill: $grey
+    margin: 2px 4px 0 0
+    transition: fill .2s
+  &__form
+    width: 100%
+    display: flex
+    align-items: center
+  &__input
+    width: 100%
+    line-height: inherit
+    border: 1px solid $grey
+    box-shadow: 0 3px 15px rgba($accent, .15)
+    padding: 0 2px
+    margin-right: 6px
+    transition: color .2s
+  &__edit
+    background-color: transparent
+    border: 0
+    svg
+      width: 16px
+      height: 16px
+      fill: $success
+  &__remove
+    flex-shrink: 0
+    background-color: transparent
+    border: 0
+    &:hover
+      svg
+        fill: $danger
+    svg
+      width: 12px
+      height: 12px
+      fill: $grey
+      transition: fill .2s
+  &__text
+    position: relative
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+    padding: 1px 3px
+    &::after
+      content: ''
+      position: absolute
+      bottom: 8px
+      left: 2px
+      right: 2px
+      height: 1px
+      background-color: $grey
+      opacity: 0
+      transition: opacity .2s
+  &__pen
+    flex-shrink: 0
+    background-color: transparent
+    border: 0
+    margin: 0 10px 0 auto
+    &:hover
+      svg
+        fill: $success
+    svg
+      width: 12px
+      height: 12px
+      fill: $grey
+      transition: fill .2s
+
+.new
+  display: flex
+  justify-content: center
+  align-items: center
+  &__btn
+    position: relative
+    background-color: transparent
+    border: 0
+    &:hover
+      svg
+        fill: $accent
+    svg
+      position: absolute
+      bottom: 0
+      left: -24px
+      width: 16px
+      height: 16px
+      fill: $grey
+      transition: fill .2s
+
+.popup
+  display: flex
+  width: 250px
+  box-shadow: $shadow
+  border-radius: 8px
+  padding: 15px
+  margin: auto auto 15px
+  &__input
+    width: 100%
+    height: 30px
+    border: 1px solid $grey
+    border-right: 0
+    border-radius: 4px 0 0 4px
+    padding: 0 6px
+  &__btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 30px
+    border: 0
+    border-radius: 0 4px 4px 0
+    background-color: $accent
+    &:active
+      transform: translateY(0)
+      svg
+        transform: translateY(1px)
+    svg
+      width: 14px
+      height: 14px
+      fill: #fff
+      margin-top: -1px
