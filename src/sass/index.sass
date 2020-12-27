@@ -16,8 +16,11 @@ body
   color: $text
   background-color: #f6fafb
 
-button:active
-  transform: translateY(1px)
+button
+  background-color: transparent
+  border: 0
+  &:active
+    transform: translateY(1px)
 
 .wrapper
   width: 100vw
@@ -105,16 +108,12 @@ button:active
     margin-right: 6px
     transition: color .2s
   &__edit
-    background-color: transparent
-    border: 0
     svg
       width: 16px
       height: 16px
       fill: $success
   &__remove
     flex-shrink: 0
-    background-color: transparent
-    border: 0
     &:hover
       svg
         fill: $danger
@@ -141,8 +140,6 @@ button:active
       transition: opacity .2s
   &__pen
     flex-shrink: 0
-    background-color: transparent
-    border: 0
     margin: 0 10px 0 auto
     &:hover
       svg
@@ -159,8 +156,6 @@ button:active
   align-items: center
   &__btn
     position: relative
-    background-color: transparent
-    border: 0
     &:hover
       svg
         fill: $accent
